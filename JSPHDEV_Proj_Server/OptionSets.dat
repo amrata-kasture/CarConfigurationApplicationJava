@@ -1,0 +1,4 @@
+GETIDRIGHT=ALTER TABLE OptionSets AUTO_INCREMENT=1
+ADDOPTIONSETS=Insert IGNORE into OptionSets (Set_Name,Created_At,Updated_At) Values (?,NOW(),?)
+DELETEOPTIONSET=Delete from OptionSets where Id Not IN (select Set_Id from Configurations);
+UPDATEOPTIONSET=Update OptionSets SET Set_Name = ?, Updated_At = NOW() Where Set_Name like ?

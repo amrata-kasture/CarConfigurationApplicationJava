@@ -1,0 +1,6 @@
+GETIDRIGHT=ALTER TABLE Options AUTO_INCREMENT=1
+ADDOPTIONS=Insert IGNORE into Options (Option_Name,Option_Price,Created_At,Updated_At) Values (?,?,NOW(),?)
+DELETEOPTION=Delete from Options where Id Not IN (select Option_Id from Configurations);
+UPDATEOPTIONPRICE=Update Options SET Option_Price = ?, Updated_At = NOW() Where Option_Name like ?
+
+

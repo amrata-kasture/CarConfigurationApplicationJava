@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>JSPHDEV_Proj_Client</display-name>
+  <welcome-file-list>
+        <welcome-file>CarModels.jsp</welcome-file>
+         <welcome-file>index.html</welcome-file>
+         <welcome-file>index.htm</welcome-file>
+         <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>CarConfigMenu</servlet-name>
+    <servlet-class>carConfigServlet.CarConfigMenu</servlet-class>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+  <servlet-mapping>
+    <servlet-name>CarConfigMenu</servlet-name>
+    <url-pattern>/CarConfigMenu</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CarPriceDetails</servlet-name>
+    <servlet-class>carConfigServlet.CarPriceDetails</servlet-class>
+</servlet>
+  <servlet-mapping>
+    <servlet-name>CarPriceDetails</servlet-name>
+    <url-pattern>/CarPriceDetails</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,71 @@
+#create database CarModelInfo;
+
+/*USE CarModelInfo;
+create Table CarModels (Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+Model_Name VARCHAR(40) NOT NULL UNIQUE,
+Model_Baseprice float NOT NULL,
+Created_At datetime,
+Updated_At datetime
+);
+*/
+
+
+/*USE CarModelInfo;
+create Table OptionSets (Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+Set_Name VARCHAR(20) NOT NULL UNIQUE,
+Created_At datetime,
+Updated_At datetime
+);*/
+
+/*USE CarModelInfo;
+create Table Options (Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+Option_Name VARCHAR(40) NOT NULL UNIQUE,
+Option_Price float NOT NULL,
+Created_At datetime,
+Updated_At datetime
+);*/
+
+/*USE CarModelInfo;
+create Table Configurations (Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+Model_Id INT NOT NULL,
+Set_Id INT NOT NULL,
+Option_Id INT NOT NULL,
+FOREIGN KEY (Model_Id) REFERENCES CarModels(Id),
+FOREIGN KEY (Set_Id) REFERENCES OptionSets(Id),
+FOREIGN KEY (Option_Id) REFERENCES Options(Id),
+Created_At datetime,
+Updated_At datetime
+);*/
+
+/*USE CarModelInfo;
+Insert into CarModels (Model_Name,Model_BasePrice,Created_At) 
+values("Toyota>>Prius>>Basic",18445,NOW());*/
+
+USE CarModelInfo; select * from CarModels;
+
+USE CarModelInfo; select * from OptionSets;
+
+USE CarModelInfo; select * from Options;
+
+USE CarModelInfo; select * from Configurations;
+
+USE CarModelInfo; Delete from CarModels where id<8;
+USE CarModelInfo; Delete from OptionSets where id<8;
+USE CarModelInfo; Delete from Options where id<20;
+USE CarModelInfo; Delete from Configurations where Id<200;
+
+#USE Employee_Details; select * from Employee;
+#Insert into Employee (Name,CreatedAt) values("AK",NOW());
+
+
+
+Select Id into temp_Set_Id from OptionSets;
+Select Id into temp_Option_Id from Options;
+Insert into Configurations (Model_Id,Set_Id, Option_Id,Created_At,Updated_At)
+select Id from CarModels;
+ 
+
+Select Id from CarModels where Model_Name like '%Toyota>>Prius>>Eco%';
+SELECT LAST_INSERT_ID();
+
+

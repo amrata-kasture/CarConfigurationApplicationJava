@@ -1,0 +1,4 @@
+GETIDRIGHT=ALTER TABLE Configurations AUTO_INCREMENT=1
+ADDCONFIGURATIONS=Insert IGNORE into Configurations (Model_Id,Set_Id, Option_Id,Created_At,Updated_At) Values (?, ?, ?,NOW(),?)
+DELETEMODELCONFIGURATIONS=Delete from Configurations where Model_Id=
+UPDATECONFIGURATIONSET= UPDATE Configurations SET Set_Id = (Select Id from OptionSets where Set_Name = ? ) WHERE Model_Id = ? AND Set_Id = ?

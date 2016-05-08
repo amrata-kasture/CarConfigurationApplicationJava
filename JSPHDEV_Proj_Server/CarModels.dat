@@ -1,0 +1,4 @@
+GETIDRIGHT=ALTER TABLE CarModels AUTO_INCREMENT=1
+ADDCARMODELS=Insert IGNORE into CarModels (Model_Name,Model_BasePrice,Created_At,Updated_At) Values (?, ?, NOW(),?)
+DELETECARMODEL=Delete from CarModels where Id=
+UPDATEMODELBASEPRICE=Update CarModels SET Model_Baseprice = ?, Updated_At = ? Where Id = ?  
